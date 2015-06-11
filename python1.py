@@ -336,27 +336,100 @@
 ##            return result
 
 
-def sub(L, s, begin, path_list, path):
-    for i in range(begin, len(L)):
-        if s == L[i]:
-            path_list.append(path + str(L[i]))
-            continue
-        if s < L[i]:
-            continue
-        K = L[::]
-        K.pop(i)
-        path_list = sub(K, s - L[i], i, path_list, path +str(L[i]))
-    return path_list
 
-L = []
-s = input()
-for c in s:
-    L.append(int(c))
-n = int(input())
-path_list = sub(L,n,0,[], '')
-solu = len(path_list)
-print(solu)
-print(path_list)
+
+
+##def sub(L, s, begin, path_list, path):
+##    for i in range(begin, len(L)):
+##        if s == L[i]:
+##            path_list.append(path + str(L[i]))
+##            continue
+##        if s < L[i]:
+##            continue
+##        K = L[::]
+##        K.pop(i)
+##        path_list = sub(K, s - L[i], i, path_list, path +str(L[i]))
+##    return path_list
+##
+##L = []
+##s = input()
+##for c in s:
+##    L.append(int(c))
+##n = int(input())
+##path_list = sub(L,n,0,[], '')
+##solu = len(path_list)
+##print(solu)
+##print(path_list)
+
+
+##
+##def find(L, limit, amount, path_list, notes, begin, optimal):
+##    for i in range(begin, len(L)):
+##        if notes[i]>=limit[i]:
+##            continue
+##        if amount==L[i]:
+##            temp = notes[::]
+##            temp[i] += 1
+##            path_list.append(temp)
+##            continue
+##        if amount<L[i]:
+##            continue
+##        temp = notes[::]
+##        temp[i] += 1
+##        path_list = find(L, limit, amount-L[i], path_list, temp, i, optimal)
+##    return path_list
+##
+##L = []
+##limit = []
+##dic = {}
+##while True:
+##    s = input()
+##    if s=='':
+##        break
+##    a,b = s.split(':')
+##    dic[int(a)] = int(b)
+##temp = sorted(dic.items(), key = lambda a:a[0], reverse = True)
+##for c in temp:
+##    L.append(c[0])
+##    limit.append(c[1])
+##notes = [0]*len(L)
+##amount = int(input('amount:'))
+##path_list = find(L, limit, amount, [], notes, 0, 0)
+##sum_list = []
+##result = []
+##for c in path_list:
+##    sum_list.append(sum(c))
+##for i in range(len(sum_list)):
+##    if sum_list[i]==min(sum_list):
+##        result.append(path_list[i])
+##if len(result)==0:
+##    print('There is no solution.')
+##elif len(result)==1:
+##    print('There is a unique solution:')
+##    for i in range(len(result[0])):
+##        if result[0][i]!=0:
+##            print('{:>{:}}: {:}'.format('$' + str(L[i]), 3, result[0][i]))
+##else:
+##    print('There are {:} solutions:'.format(len(result)))
+##    for d in result:
+##        for i in range(len(d)):
+##            if d[i]!=0:
+##                print('{:>{:}}: {:}'.format('$' + str(L[i]), 3, d[i]))
+##        print()
+
+
+
+    
+
+
+                                
+                                    
+                                        
+                                
+                        
+                        
+
+
     
                                 
                                     
